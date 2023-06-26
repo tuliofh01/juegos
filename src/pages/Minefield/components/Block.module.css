@@ -1,0 +1,16 @@
+.block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border: solid 1px black;
+}
+
+.block:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}

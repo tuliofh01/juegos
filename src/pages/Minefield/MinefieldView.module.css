@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+}
+
+.block {
+  flex: 1;
+  border: 1px solid #ccc; /* Example border styling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  font-family: Arial, Helvetica, sans-serif;
+}
