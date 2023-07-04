@@ -87,6 +87,13 @@ class Minefield {
     return minesCount;
   };
 
+  // Conditionally updates games status
+  checkGameOver = () => {
+    if (!this.playerIsAlive || this.getMinesCount() === 0) {
+      this.isGameOver = true;
+    }
+  }
+
   // Processes a click in the minefield
   step = (row, column) => {
     const matrix = JSON.parse(JSON.stringify(this.minefield));
@@ -156,9 +163,7 @@ class Minefield {
     this.minefield = matrix;
 
     // Check game status
-    if (!this.playerIsAlive || this.getMinesCount() === 0) {
-      this.isGameOver = true;
-    }
+    this.checkGameOver();
   };
 
   // Marks target cell
@@ -168,6 +173,7 @@ class Minefield {
     } else {
       this.minefield[x][y] = this.states.MARKED;
     }
+    this.checkGameOver()
   };
 
   // Unmarks target cell
@@ -177,6 +183,7 @@ class Minefield {
     } else if (this.minefield[x][y] === this.states.SUCCESSFULLY_MARKED) {
       this.minefield[x][y] = this.states.MINE;
     }
+    this.checkGameOver();
   };
 
   // Generates mine distance value
@@ -203,7 +210,7 @@ class Minefield {
       }
     }
 
-    return minSlots;
+    return minSlots === Infinity ? 0 : minSlots;
   };
 }
 
