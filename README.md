@@ -1,3 +1,3 @@
 # juegos
-### URL: https://juegos-mulpyeu2l-tuliofh01.vercel.app/
+### URL: https://juegos-chi.vercel.app/
 A small collection of JS based games.
