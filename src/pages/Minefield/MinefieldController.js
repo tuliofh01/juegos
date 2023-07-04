@@ -1,4 +1,5 @@
 class Minefield {
+ 
   constructor(rows, columns) {
     this.rows = rows;
     this.columns = columns;
@@ -8,12 +9,20 @@ class Minefield {
       this.minefield[i] = new Array(columns);
     }
 
+    this.distanceArray = new Array(rows);
+    for (let i = 0; i < rows; i++) {
+      this.distanceArray[i] = new Array(columns);
+    }
+
+    // Cell states
     this.states = {
       UNTOUCHED: 0,
       MINE: 1,
       FLARE: 2,
       CLEAR: 3,
       MARKED: 4,
+      NUMBERED: 5,
+      SUCCESSFULLY_MARKED: 6,
     };
 
     this.playerIsAlive = true;
@@ -26,6 +35,7 @@ class Minefield {
     this.setFlares();
   }
 
+  // Randomly adds mines to the minefield
   setMines = () => {
     for (let row = 0; row < this.rows; row++) {
       for (let column = 0; column < this.columns; column++) {
@@ -39,6 +49,7 @@ class Minefield {
     }
   };
 
+  // Randomly adds flares to the minefield
   setFlares = () => {
     for (let row = 0; row < this.rows; row++) {
       for (let column = 0; column < this.columns; column++) {
@@ -53,8 +64,9 @@ class Minefield {
     }
   };
 
+  // Checks game status (used to end the game)
   checkGameStatus = () => {
-    if (!this.playerIsAlive || this.currentScore >= this.columns * this.rows) {
+    if (!this.playerIsAlive || this.getMinesCount() === 0) {
       this.isGameOver = true;
       return false;
     } else {
@@ -62,6 +74,20 @@ class Minefield {
     }
   };
 
+  // Counts mines (used to end the game)
+  getMinesCount = () => {
+    let minesCount = 0;
+    for (let row = 0; row < this.rows; row++) {
+      for (let column = 0; column < this.columns; column++) {
+        if (this.minefield[row][column] === this.states.MINE) {
+          minesCount++;
+        }
+      }
+    }
+    return minesCount;
+  };
+
+  // Processes a click in the minefield
   step = (row, column) => {
     const matrix = JSON.parse(JSON.stringify(this.minefield));
     const rows = this.rows;
@@ -97,9 +123,11 @@ class Minefield {
         if (isValidPosition(row, column)) {
           const state = matrix[row][column];
           if (state === this.states.UNTOUCHED) {
-            updatePosition(row, column, this.states.CLEAR); // Clear untouched position
+            // Clear untouched position
+            updatePosition(row, column, this.states.CLEAR);
           } else if (state === this.states.MINE) {
-            updatePosition(row, column, this.states.MARKED); // Mark adjacent mine
+            // Mark adjacent mine
+            updatePosition(row, column, this.states.SUCCESSFULLY_MARKED);
           }
         }
       });
@@ -112,9 +140,11 @@ class Minefield {
         matrix[row][column] === this.states.FLARE)
     ) {
       if (matrix[row][column] === this.states.FLARE) {
-        clearOrMarkAdjacentPositions(row, column); // Clear or mark adjacent positions
+        // Clear or mark adjacent positions
+        clearOrMarkAdjacentPositions(row, column);
       }
-      matrix[row][column] = this.states.CLEAR; // Change untouched or flare to clear
+      // Change untouched or flare to clear
+      matrix[row][column] = this.states.CLEAR;
       this.currentScore += 1;
     } else if (
       isValidPosition(row, column) &&
@@ -131,12 +161,25 @@ class Minefield {
     }
   };
 
+  // Marks target cell
   mark = (x, y) => {
     if (this.minefield[x][y] === this.states.MINE) {
+      this.minefield[x][y] = this.states.SUCCESSFULLY_MARKED;
+    } else {
       this.minefield[x][y] = this.states.MARKED;
     }
   };
 
+  // Unmarks target cell
+  unmark = (x, y) => {
+    if (this.minefield[x][y] === this.states.MARKED) {
+      this.minefield[x][y] = this.states.UNTOUCHED;
+    } else if (this.minefield[x][y] === this.states.SUCCESSFULLY_MARKED) {
+      this.minefield[x][y] = this.states.MINE;
+    }
+  };
+
+  // Generates mine distance value
   calculateNearestMine = (entryRow, entryColumn) => {
     const matrix = this.minefield;
     const rows = this.rows;

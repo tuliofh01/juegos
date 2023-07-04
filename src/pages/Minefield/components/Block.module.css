@@ -7,10 +7,19 @@
     height: 50px;
     width: 50px;
     background-color: gray;
-    border: solid 1px black;
+    outline: solid 1px black;
 }
 
 .block:hover{
     background-color: lightgray;
     cursor: pointer;
+}
+
+.disabled {
+  background-color: #585858;
+}
+
+.disabled:hover{
+    background-color: #585858;
+    cursor: auto;
 }
