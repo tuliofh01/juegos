@@ -203,7 +203,10 @@ class Minefield {
 
     for (let row = 0; row < rows; row++) {
       for (let column = 0; column < columns; column++) {
-        if (matrix[row][column] === this.states.MINE) {
+        if (
+          matrix[row][column] === this.states.MINE ||
+          matrix[row][column] === this.states.SUCCESSFULLY_MARKED
+        ) {
           const slots = calculateSlots(entryRow, entryColumn, row, column);
           minSlots = Math.min(minSlots, slots);
         }
