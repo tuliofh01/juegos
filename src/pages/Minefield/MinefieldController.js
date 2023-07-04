@@ -156,7 +156,7 @@ class Minefield {
     this.minefield = matrix;
 
     // Check game status
-    if (!this.playerIsAlive || this.currentScore >= this.totalScore) {
+    if (!this.playerIsAlive || this.getMinesCount() === 0) {
       this.isGameOver = true;
     }
   };
