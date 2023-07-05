@@ -6,10 +6,6 @@ import GuessTheNumberView from "./pages/GuessTheNumber/GuessTheNumberView";
 function App() {
   return (
     <div className="App">
-      <script 
-      async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8142539928472662"
-      crossorigin="anonymous"
-      />
       <Router>
         <Routes>
           <Route path="/" element={<Index/>}/>
