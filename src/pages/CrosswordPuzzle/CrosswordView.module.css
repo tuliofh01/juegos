@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.background {
+    background-color: rgb(0, 55, 0);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;    
+    clear: both;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    background-color: white;
+}
+
+.puzzleContainer{
+    justify-self: flex-start;
+    margin: 10px auto;
+    border: 2px solid black;
+}
+
+.definitionsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-end;
+    background-color: green;
+    border-radius: 10px;
+    height: auto;
+    margin: 50px 10px 5px 10px;
+    justify-content: space-between;
+}
+
+.definitionsInnerContainer{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding: 5px;
+    width: 50%;
+}
+
+.score {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-self: center;
+}
+
+.homeButton {
+  align-self: flex-start;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 20px;
+  border: 2px solid black;
+  background-color: azure;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}

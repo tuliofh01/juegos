@@ -11,7 +11,8 @@ function Index(){
             <h3 className={styles.h3}>Available titles:</h3>
             <ul className={styles.ul}>
                 <li className={styles.li} onClick={() => {navigate("/minefield")}}>Minefield</li>
-                <li className={styles.li} onClick={() => {navigate("/GuessTheNumber")}}>Guess the Number</li>
+                <li className={styles.li} onClick={() => {navigate("/guessTheNumber")}}>Guess the Number</li>
+                <li className={styles.li} onClick={() => {navigate("/crosswordPuzzle")}}>Crossword Puzzle</li>
             </ul>
         </div>
     );

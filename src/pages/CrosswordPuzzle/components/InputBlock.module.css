@@ -1,0 +1,22 @@
+.blankCell{
+    padding: 5px;
+    height: 20px;
+    width: 20px;
+    outline: 1px solid black;
+    border: none;
+    background-color: azure;
+}
+
+.blankCell::placeholder{
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.correctCell{
+    padding: 5px;
+    height: 20px;
+    width: 20px;
+    outline: 1px solid black;
+    border: none;
+    background-color: lightgreen;
+}
