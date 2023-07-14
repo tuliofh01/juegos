@@ -8,8 +8,8 @@ function Index(){
     return (
       <div className={styles.container + " " + styles.background}>
         <h1 className={styles.title}>juegos</h1>
-        <ul className={styles.ul + " " + styles.liquid}>
-          <h3 className={styles.h3}>Available titles:</h3>
+        <h3 className={styles.h3}>Available titles:</h3>
+        <ul className={styles.parallelogramRight}>
           <li
             className={styles.li}
             onClick={() => {
@@ -34,6 +34,23 @@ function Index(){
           >
             Crossword Puzzle
           </li>
+        </ul>
+        <ul className={styles.parallelogramLeft}>
+          <li
+            className={styles.li}
+            onClick={() => {
+              navigate("/hangman");
+            }}
+          >
+            Hangman
+          </li>
+          <li className={styles.li}>Maze</li>
+          <li className={styles.li}>Whack-a-Mole</li>
+        </ul>
+        <ul className={styles.parallelogramRight}>
+          <li className={styles.li}>Tic-Tac-Toe</li>
+          <li className={styles.li}>Memory Game</li>
+          <li className={styles.li}>Snake</li>
         </ul>
       </div>
     );

@@ -21,13 +21,7 @@ body {
   padding: 0;
 }
 
-.ul, .h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 10px;
-}
-
-.ul {
+.parallelogramRight {
   width: 30%;
   background-image: url('./assets/liquid.gif');
   background-repeat: no-repeat;
@@ -41,14 +35,34 @@ body {
   transform-origin: left top;
 }
 
-.ul > * {
+.parallelogramRight > * {
   transform: skewX(20deg);
   transform-origin: left top;
 }
 
+.parallelogramLeft {
+  width: 30%;
+  background-image: url('./assets/liquid.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+  border: 4px double white;
+  margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+  transform: skewX(20deg);
+  transform-origin: top right;
+}
+
+.parallelogramLeft > * {
+  transform: skewX(-20deg);
+  transform-origin: top right;
+}
+
 .h3{
-  color: black;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 5px auto;
 }
 
 .li {
