@@ -4,6 +4,7 @@ import Index from "./pages/Index/Index"
 import GuessTheNumberView from "./pages/GuessTheNumber/GuessTheNumberView";
 import CrosswordView from "./pages/CrosswordPuzzle/CrosswordView";
 import HangmanView from "./pages/Hangman/HangmanView";
+import MazeView from "./pages/Maze/MazeView"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/guessTheNumber" Component={GuessTheNumberView} />
           <Route path="/crosswordPuzzle" Component={CrosswordView} />
           <Route path="/hangman" Component={HangmanView} />
+          <Route path="/maze" Component={MazeView} />
         </Routes>
       </Router>
     </div>

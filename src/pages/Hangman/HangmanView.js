@@ -6,7 +6,6 @@ import styles from "./HangmanView.module.css";
 import DollDisplay from "./components/DollDisplay";
 import { useNavigate } from "react-router-dom";
 
-
 function HangmanView() {
   const controllerRef = useRef(new HangmanController());
   const [isLoaded, setIsLoaded] = useState(false);

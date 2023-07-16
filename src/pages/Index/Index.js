@@ -44,7 +44,14 @@ function Index(){
           >
             Hangman
           </li>
-          <li className={styles.li}>Maze</li>
+          <li
+            className={styles.li}
+            onClick={() => {
+              navigate("/maze");
+            }}
+          >
+            Maze
+          </li>
           <li className={styles.li}>Whack-a-Mole</li>
         </ul>
         <ul className={styles.parallelogramRight}>
