@@ -307,7 +307,7 @@ class CrosswordController {
   }
 
   checkGameStatus = () => {
-    if(this.countFlaws() >= 0){
+    if(this.countFlaws() === 0){
       this.isGameOver = true;
     }
   }
