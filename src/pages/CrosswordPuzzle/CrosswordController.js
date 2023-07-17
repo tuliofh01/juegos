@@ -297,9 +297,12 @@ class CrosswordController {
     let flaws = 0;
     for(let i = 0; i < this.boardSize; i++){
       for(let j = 0; j < this.boardSize; j++){
-        if(this.stateMatrix[i][j] === this.states.BLANK || 
-          this.stateMatrix[i][j] === this.states.INCORRECT){
-            flaws += 1;
+        if (
+          this.stateMatrix[i][j] === this.states.BLANK ||
+          this.stateMatrix[i][j] === this.states.INCORRECT ||
+          this.stateMatrix[i][j] === this.states.FILLED
+        ) {
+          flaws += 1;
         }
       }
     }
