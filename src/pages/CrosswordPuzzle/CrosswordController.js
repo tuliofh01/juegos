@@ -297,7 +297,7 @@ class CrosswordController {
     let flaws = 0;
     for(let i = 0; i < this.boardSize; i++){
       for(let j = 0; j < this.boardSize; j++){
-        if(this.stateMatrix[i][j] === this.states.FILLED || 
+        if(this.stateMatrix[i][j] === this.states.BLANK || 
           this.stateMatrix[i][j] === this.states.INCORRECT){
             flaws += 1;
         }
@@ -307,7 +307,7 @@ class CrosswordController {
   }
 
   checkGameStatus = () => {
-    if(this.countFlaws() === 0){
+    if(this.countFlaws() >= 0){
       this.isGameOver = true;
     }
   }

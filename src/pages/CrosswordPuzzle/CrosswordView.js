@@ -33,6 +33,8 @@ function CrosswordView() {
   }, [])
 
   function inputHandler(event, key){
+    controller.current.checkGameStatus();
+
     const inputValue = event.target.value;
     const inputPosition = key.split("-");
     if(controller.current.crosswordMatrix[inputPosition[0]][inputPosition[1]] === inputValue){
@@ -102,7 +104,7 @@ function CrosswordView() {
         <strong>Score: </strong>
         {score}
       </p>
-      {controller.current.isGameOver && <GameOverModal />}
+      {controller.current.isGameOver && <GameOverModal score={score} />}
     </div>
   );
 }
