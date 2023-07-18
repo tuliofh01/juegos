@@ -1,0 +1,50 @@
+.container{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("./assets/grass.avif");
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+.innerContainer {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 350px;
+  height: 350px;
+  border: 3px solid black;
+}
+
+.cell {
+  height: 50px;
+  width: 50px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.text{
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+}
+
+.homeButton {
+  align-self: flex-start;
+  align-items: center;
+  margin-left: 20px;
+  border: 2px solid black;
+  background-color: gray;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.homeButton:hover{
+  background-color: lightgray;
+}

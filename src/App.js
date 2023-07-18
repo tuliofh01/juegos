@@ -5,6 +5,7 @@ import GuessTheNumberView from "./pages/GuessTheNumber/GuessTheNumberView";
 import CrosswordView from "./pages/CrosswordPuzzle/CrosswordView";
 import HangmanView from "./pages/Hangman/HangmanView";
 import MazeView from "./pages/Maze/MazeView"
+import WhackAMoleView from "./pages/WhackAMole/WhackAMoleView";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/crosswordPuzzle" Component={CrosswordView} />
           <Route path="/hangman" Component={HangmanView} />
           <Route path="/maze" Component={MazeView} />
+          <Route path="/mole" Component={WhackAMoleView}/>
         </Routes>
       </Router>
     </div>
