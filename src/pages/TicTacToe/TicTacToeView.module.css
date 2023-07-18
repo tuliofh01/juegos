@@ -1,0 +1,69 @@
+@font-face {
+  font-family: '1942';
+  src: url('./assets/1942.ttf') format('truetype');
+}
+
+.container{
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./assets/bg.png");
+  background-repeat: repeat;
+  background-size: contain;
+  font-family: '1942';
+  color: black;
+  font-size: 20px;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 156px;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  font-size: 35px;
+}
+
+.x {
+  color: red;
+}
+
+.o {
+  color: blue;
+}
+
+.homeButton {
+  align-self: flex-start;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 2px solid black;
+  background-color: gray;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.homeButton:hover{
+  background-color: lightgray;
+}

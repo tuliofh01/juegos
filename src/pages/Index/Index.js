@@ -62,7 +62,14 @@ function Index(){
           </li>
         </ul>
         <ul className={styles.parallelogramRight}>
-          <li className={styles.li}>Tic-Tac-Toe</li>
+          <li
+            className={styles.li}
+            onClick={() => {
+              navigate("/hash");
+            }}
+          >
+            Tic-Tac-Toe
+          </li>
           <li className={styles.li}>Memory Game</li>
           <li className={styles.li}>Snake</li>
         </ul>
