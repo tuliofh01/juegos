@@ -4,6 +4,7 @@ import MinefieldView from "./pages/Minefield/MinefieldView";
 import GuessTheNumberView from "./pages/GuessTheNumber/GuessTheNumberView";
 import CrosswordView from "./pages/CrosswordPuzzle/CrosswordView";
 import WhackAMoleView from "./pages/WhackAMole/WhackAMoleView";
+import MemoryGameView from "./pages/MemoryGame/MemoryGameView";
 import TicTacToeView from "./pages/TicTacToe/TicTacToeView";
 import HangmanView from "./pages/Hangman/HangmanView";
 import SnakeView from "./pages/Snake/SnakeView";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/mole" Component={WhackAMoleView}/>
           <Route path="/hash" Component={TicTacToeView} />
           <Route path="/snake" Component={SnakeView} />
+          <Route path="/memory" Component={MemoryGameView} />
         </Routes>
       </Router>
     </div>

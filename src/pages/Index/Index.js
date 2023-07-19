@@ -70,7 +70,14 @@ function Index(){
           >
             Tic-Tac-Toe
           </li>
-          <li className={styles.li}>Memory Game</li>
+          <li
+            className={styles.li}
+            onClick={() => {
+              navigate("/memory");
+            }}
+          >
+            Memory Game
+          </li>
           <li
             className={styles.li}
             onClick={() => {

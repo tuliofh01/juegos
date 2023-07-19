@@ -13,11 +13,11 @@ class WhackAMoleController{
 
         this.board = [];
         for (let i = 0; i < rows; i++) {
-        const row = [];
-        for (let j = 0; j < columns; j++) {
-            row.push(this.states.EMPTY);
-        }
-        this.board.push(row);
+            const row = [];
+            for (let j = 0; j < columns; j++) {
+                row.push(this.states.EMPTY);
+            }
+            this.board.push(row);
         }
     }
 
