@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index/Index";
 import MinefieldView from "./pages/Minefield/MinefieldView";
-import Index from "./pages/Index/Index"
 import GuessTheNumberView from "./pages/GuessTheNumber/GuessTheNumberView";
 import CrosswordView from "./pages/CrosswordPuzzle/CrosswordView";
-import HangmanView from "./pages/Hangman/HangmanView";
-import MazeView from "./pages/Maze/MazeView"
 import WhackAMoleView from "./pages/WhackAMole/WhackAMoleView";
 import TicTacToeView from "./pages/TicTacToe/TicTacToeView";
+import HangmanView from "./pages/Hangman/HangmanView";
+import SnakeView from "./pages/Snake/SnakeView";
+import MazeView from "./pages/Maze/MazeView";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/maze" Component={MazeView} />
           <Route path="/mole" Component={WhackAMoleView}/>
           <Route path="/hash" Component={TicTacToeView} />
+          <Route path="/snake" Component={SnakeView} />
         </Routes>
       </Router>
     </div>

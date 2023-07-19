@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'digital';
+  src: url('./assets/digital-7.ttf') format('truetype');
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("./assets/grass.jpg");
+    background-repeat: repeat;
+    background-size: 25%;
+    font-family: 'digital';
+}
+
+.board {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 10px;
+  height: 10px;
+}
+
+.state-0 {
+  background-color: rgb(0, 160, 0);
+}
+
+.state-1 {
+  background-color: black;
+}
+
+.state-2 {
+  background-color: yellow;
+}
+
+.state-3 {
+  background-color: darkgreen;
+}
+
+.state-4 {
+  background-color: rgb(50, 255, 50);
+}
+
+.score{
+    font-size: 25px;
+}
