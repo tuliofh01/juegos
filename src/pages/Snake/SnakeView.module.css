@@ -54,3 +54,23 @@
 .score{
     font-size: 25px;
 }
+
+.homeButton {
+  align-self: flex-start;
+  align-items: center;
+  margin-left: 20px;
+  border: 2px solid black;
+  background-color: gray;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  float: left;
+  clear: both;
+  z-index: 9999;
+  position: fixed;
+}
+
+.homeButton:hover{
+  background-color: lightgray;
+}

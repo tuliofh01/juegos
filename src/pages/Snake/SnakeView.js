@@ -2,10 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import SnakeController from "./SnakeController";
 import GameOverModal from "./components/GameOverModal";
 import styles from "./SnakeView.module.css";
+import { useNavigate } from "react-router-dom";
 
 const SnakeGame = () => {
   const [snakeController, setSnakeController] = useState(new SnakeController());
   const gameIntervalRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     gameIntervalRef.current = setInterval(() => {
@@ -56,6 +58,13 @@ const SnakeGame = () => {
 
   return (
     <div className={styles.container}>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+      />
+      <button className={styles.homeButton} onClick={() => navigate("/")}>
+        <span class="material-symbols-outlined">home</span>
+      </button>
       <h1>Snake</h1>
       <div className={styles.board}>
         {snakeController.board.map((row, rowIndex) => (
@@ -72,7 +81,9 @@ const SnakeGame = () => {
       <p className={styles.score}>
         <strong>Score:</strong> {snakeController.snakeSize}
       </p>
-      {snakeController.isGameOver && <GameOverModal score={snakeController.snakeSize}/>}
+      {snakeController.isGameOver && (
+        <GameOverModal score={snakeController.snakeSize} />
+      )}
     </div>
   );
 };
